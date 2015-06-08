@@ -9,9 +9,10 @@ public class TextMeshAppear : MonoBehaviour
     public float AppearTime;            //過程花費時間
     public float DelayTime;             //延遲時間
     public EndToDo endToDo;             //文字完成後，確認要做甚麼事情
+    public GameDefinition.GameType EnterGameType = GameDefinition.GameType.None;
     //public bool isNextEvent = false;    //文字完成後是否進行事件切換 (EventCollection script)
 
-    private bool isMouseActive;
+    public bool isMouseActive;
     private bool isComplete;    //確認文字出現是否完成
     private TextMesh textMesh;
     public string ShowString;  //儲存字串
@@ -116,6 +117,7 @@ public class TextMeshAppear : MonoBehaviour
                             NPCTalkingManager.script.NextTalk();
                             break;
                         case EndToDo.EnterGame:
+                            GameDefinition.CurrentChooseGameType = this.EnterGameType;   //修改2015鳳雛傳用
                             GameCollection.script.GameOpening();
                             this.enabled = false;   //關閉此script，避免再度觸發
                             break;

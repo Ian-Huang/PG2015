@@ -40,7 +40,9 @@ public class ButtonController : MonoBehaviour
                 break;
             case GameDefinition.ButtonEvent.GameEnd:    //(暫定) 關閉目前正在進行遊戲的主體
                 GameCollection.script.CurrentGameData.Game_Object.SetActive(false);
-                NPCTalkingManager.script.NextTalk();
+                //修改2015鳳雛傳用
+                EventCollection.script.NextEvent();
+                //NPCTalkingManager.script.NextTalk();
                 break;
             case GameDefinition.ButtonEvent.GameEnd_卡片掉了:    //(暫定) 特別: (記憶對對碰)卡片掉了任務 ， 關閉目前正在進行遊戲的主體
                 GameCollection.script.CurrentGameData.Game_Object.SetActive(false);
