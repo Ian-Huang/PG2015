@@ -7,8 +7,11 @@ using System.Collections.Generic;
 /// </summary>
 public class EventCollection : MonoBehaviour
 {
+    [HideInInspector]
     public List<GameObject> EventList;  //儲存事件清單
-    public int CurrentEventIndex;       //目前事件索引
+
+    public GameObject StartEvent;       //測試用，開始事件
+    public int CurrentEventIndex;       //目前事件索引 
 
     public GameObject Special_CheckExitArea;    //特別使用，在區域地圖確認是否離開島嶼用
     public static EventCollection script;
@@ -17,6 +20,17 @@ public class EventCollection : MonoBehaviour
     {
         script = this;
 
+        for (int i = 0; i < this.transform.childCount; i++)
+        {
+            //判定是否使用測試開始事件
+            if (this.StartEvent != null)
+            {
+                if (this.StartEvent == this.transform.GetChild(i).gameObject)
+                    this.CurrentEventIndex = i;
+            }
+
+            this.EventList.Add(this.transform.GetChild(i).gameObject);
+        }
         foreach (GameObject temp in this.EventList)
             temp.SetActive(false);
 

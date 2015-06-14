@@ -1,8 +1,9 @@
 fileFormatVersion: 2
-guid: 25e81b7947b5c584a9dcd7733493a336
+guid: 5960ffc686a91074195d23b3c0fbdd0f
 TextureImporter:
   fileIDToRecycleName:
-    21300000: "\u63A8\u7406\u8981\u5728\u665A\u9910\u5F8C_\u8A08\u6642\u6846"
+    21300000: "\u8A08\u6642\u68461"
+    21300002: "\u8A08\u6642\u6846"
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -41,11 +42,7 @@ TextureImporter:
   spritePixelsToUnits: 100
   alphaIsTransparency: 1
   textureType: 8
-  buildTargetSettings:
-  - buildTarget: iPhone
-    maxTextureSize: 1024
-    textureFormat: -2
-    compressionQuality: 50
+  buildTargetSettings: []
   spriteSheet:
     sprites: []
   spritePackingTag: 
