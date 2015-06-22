@@ -62,9 +62,9 @@ public class SingSongGame_Manager : MonoBehaviour
         {
             //顯示正確答案，並將錯誤答案 暫時隱藏
             if (script.isTureAnswer)
-                script.GetComponent<TextMesh>().color = new Color(1, 0, 0, 1);
+                script.GetComponent<SpriteRenderer>().sprite = script.ActiveSprite;
             else
-                script.GetComponent<TextMesh>().color = new Color(0, 0, 0, 0);
+                script.gameObject.SetActive(false);
 
             script.isCanChoose = false;
         }

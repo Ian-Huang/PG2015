@@ -5,8 +5,8 @@ public class SingSongGame_Option : MonoBehaviour
 {
     public bool isTureAnswer;
 
-    public Color NormalColor;
-    public Color ActiveColor;
+    public Sprite NormalSprite;
+    public Sprite ActiveSprite;
 
     [HideInInspector]
     public bool isCanChoose = true;
@@ -14,13 +14,13 @@ public class SingSongGame_Option : MonoBehaviour
     void OnMouseEnter()
     {
         if (this.isCanChoose)
-            this.GetComponent<TextMesh>().color = this.ActiveColor;
+            this.GetComponent<SpriteRenderer>().sprite = this.ActiveSprite;
     }
 
     void OnMouseExit()
     {
         if (this.isCanChoose)
-            this.GetComponent<TextMesh>().color = this.NormalColor;
+            this.GetComponent<SpriteRenderer>().sprite = this.NormalSprite;
     }
 
     void OnMouseUpAsButton()
