@@ -76,6 +76,9 @@ public class ButtonController : MonoBehaviour
             case GameDefinition.ButtonEvent.ReasoningGameShowAnswer:    //推理在晚餐後，顯示答案
                 ReasoningGame_Manager.script.ShowAnswer();
                 break;
+            case GameDefinition.ButtonEvent.IdiomsGameShowAnswer:    //看圖猜成語，顯示答案
+                IdiomsGame_Manager.script.ShowAnswer();
+                break;
             case GameDefinition.ButtonEvent.TreasureGame_Finish:    //神秘島，寶物問題完成
                 GameDefinition.CurrentTreasureController_Script.OpenEpilogue();
                 break;
