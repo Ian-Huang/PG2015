@@ -28,18 +28,18 @@ public class MemoryMatchGame_Manager : MonoBehaviour
         this.RoleText.text = "";
 
         //移除未被選擇的腳色，同時找出觸發此遊戲的腳色(firstRole)，將會當作第一位遊戲腳色
-        List<MemoryGameRoleData> tempList = new List<MemoryGameRoleData>(this.RoleDataList);
-        MemoryGameRoleData firstRole = null;
-        foreach (MemoryGameRoleData temp in tempList)
-        {
-            if (GameDefinition.PlayerNameData[temp.SystemName] == string.Empty)
-                this.RoleDataList.Remove(temp);
-            else if (temp.SystemName == GameDefinition.CurrentChoosePlayerName)
-                firstRole = temp;
-        }
-        //將觸發此遊戲的腳色移到清單第一位
-        this.RoleDataList.Remove(firstRole);
-        this.RoleDataList.Insert(0, firstRole);
+        //List<MemoryGameRoleData> tempList = new List<MemoryGameRoleData>(this.RoleDataList);
+        //MemoryGameRoleData firstRole = null;
+        //foreach (MemoryGameRoleData temp in tempList)
+        //{
+        //    if (GameDefinition.PlayerNameData[temp.SystemName] == string.Empty)
+        //        this.RoleDataList.Remove(temp);
+        //    else if (temp.SystemName == GameDefinition.CurrentChoosePlayerName)
+        //        firstRole = temp;
+        //}
+        ////將觸發此遊戲的腳色移到清單第一位
+        //this.RoleDataList.Remove(firstRole);
+        //this.RoleDataList.Insert(0, firstRole);
 
         //將所有 Card 儲存至清單
         foreach (var temp in this.GetComponentsInChildren<MemoryMatchGame_Card>())
@@ -123,8 +123,8 @@ public class MemoryMatchGame_Manager : MonoBehaviour
             this.CurrentState = State.StopGame;
 
             //將各腳色分數紀錄於系統
-            foreach (var temp in this.RoleDataList)
-                GameCollection.script.MemoryGameRoleScoreMapping.Add(temp.SystemName, temp.score);
+            //foreach (var temp in this.RoleDataList)
+               // GameCollection.script.MemoryGameRoleScoreMapping.Add(temp.SystemName, temp.score);
 
             //顯示下一階段 ， 統計成績(未完成)
             GameCollection.script.NextGameStep();
@@ -143,7 +143,7 @@ public class MemoryMatchGame_Manager : MonoBehaviour
             temp.RotateCard(MemoryMatchGame_Card.CardFaceType.Back);
         }
 
-        this.RoleAppear();  //第一位腳色出現，開始遊戲
+        //this.RoleAppear();  //第一位腳色出現，開始遊戲
         this.CurrentState = State.StartGame;
     }
 

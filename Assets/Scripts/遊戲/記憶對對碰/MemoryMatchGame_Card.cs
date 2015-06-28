@@ -122,7 +122,7 @@ public class MemoryMatchGame_Card : MonoBehaviour
                     SoundManager.script.PlaySound(SoundManager.SoundType.正確音效);
 
                     //針對目前進行腳色計分
-                    MemoryMatchGame_Manager.script.RoleDataList[MemoryMatchGame_Manager.script.currentPlayRoleIndex].score++;
+                    //MemoryMatchGame_Manager.script.RoleDataList[MemoryMatchGame_Manager.script.currentPlayRoleIndex].score++;
 
                     //檢查是否全部翻完
                     MemoryMatchGame_Manager.script.CheckCardOK();
@@ -143,7 +143,7 @@ public class MemoryMatchGame_Card : MonoBehaviour
                     SoundManager.script.PlaySound(SoundManager.SoundType.錯誤音效);
 
                     //切換下一位腳色進行遊戲
-                    MemoryMatchGame_Manager.script.RoleAppear();
+                    //MemoryMatchGame_Manager.script.RoleAppear();
 
                     //配對錯誤後....(未完成)
                 }
