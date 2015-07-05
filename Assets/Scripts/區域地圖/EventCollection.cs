@@ -13,7 +13,7 @@ public class EventCollection : MonoBehaviour
     public GameObject StartEvent;       //測試用，開始事件
     public int CurrentEventIndex;       //目前事件索引 
 
-    public GameObject Special_CheckExitArea;    //特別使用，在區域地圖確認是否離開島嶼用
+    public GameObject Special_CheckExitArea;    //特別使用，  2014-在區域地圖確認是否離開島嶼用 , 2015-按下開始遊戲後閃光
     public static EventCollection script;
 
     void Awake()

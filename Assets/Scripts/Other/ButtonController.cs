@@ -95,8 +95,19 @@ public class ButtonController : MonoBehaviour
                 EventCollection.script.EventList[EventCollection.script.CurrentEventIndex].SetActive(true);    //關閉目前事件物件
                 EventCollection.script.Special_CheckExitArea.SetActive(false);
                 break;
+            case GameDefinition.ButtonEvent.OpenStartGame:    //下一事件
+                this.buttonEvent = GameDefinition.ButtonEvent.Nothing;
+                StartCoroutine(this.OpenStarGameEvent());
+                break;
             default:
                 break;
         }
+    }
+
+    IEnumerator OpenStarGameEvent()
+    {
+        EventCollection.script.Special_CheckExitArea.SetActive(true);
+        yield return new WaitForSeconds(3.5f);
+        EventCollection.script.NextEvent(); //切換下一事件
     }
 }

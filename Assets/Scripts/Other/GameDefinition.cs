@@ -48,12 +48,11 @@ public class GameDefinition
     public static List<QuickAnsGameQuestionData> QuickAnsGameQuestionDataList_isUsed = new List<QuickAnsGameQuestionData>();
     public static List<QuickAnsGameQuestionData> QuickAnsGameQuestionDataList = new List<QuickAnsGameQuestionData>()
     {
-       new QuickAnsGameQuestionData("台灣每年出產量達1800萬隻，世界第一的水族王國，主要哪種生物？","蝦","魚","龜",1 ),
+        new QuickAnsGameQuestionData("台灣每年出產量達1800萬隻，世界第一的水族王國，主要哪種生物？","蝦","魚","龜",1 ),
         new QuickAnsGameQuestionData("2015年5月台灣指揮家莊東杰獲得馬爾科國際青年指揮大賽，拿下世界冠軍，請問在哪舉辦？","紐西蘭","澳洲","丹麥",3 ),
         new QuickAnsGameQuestionData("2014WCE世界盃烘豆大賽，來自台灣的賴昱權榮登冠軍寶座，請問他烘的主要是？","紅豆","咖啡豆","花豆",2 ),
         new QuickAnsGameQuestionData("2015世界威士忌競賽，冠軍來自台灣麥芽威士忌原酒，是屬於哪個地方？","屏東","花蓮","宜蘭",3 ),
         new QuickAnsGameQuestionData("2015年國際發明展，台灣共拿回26金16銀11銅，以及7面特別獎，獲獎率世界排名第一，請問是在哪裡舉辦的？","瑞士日內瓦","德國","英國",1 ),
-        new QuickAnsGameQuestionData("2014年來自台灣的陳立喆獲得<全球甜點廚師大賽>冠軍，請問他每天花幾個小時，練習甜點製作？","6小時","9小時","15小時",3 ),
         new QuickAnsGameQuestionData("2014年亞運女子舉重63公斤 我國林子琦奪金，請問<舉重>屬於哪種類型運動？","打擊","角力","有氧",2 ),
         new QuickAnsGameQuestionData("美國白宮指定台灣製造，請問是哪項產品","電視","檯燈","窗簾布",3 ),
         new QuickAnsGameQuestionData("2015年「第23屆台灣精品金銀質獎」台灣某自行車品牌榮獲「REACTO（銳克多）世界冠軍選手車」，是哪個品牌呢？","美利達","捷安特","鳳凰",1 ),
@@ -72,8 +71,8 @@ public class GameDefinition
         new QuickAnsGameQuestionData("2015年台灣女將莊佳佳於俄羅斯拿下何項世界性錦標賽的金牌？也篤定得到明年里約奧運會的門票。","射箭","自行車","跆拳道",3 ),
         new QuickAnsGameQuestionData("響尾蛇的響尾(又稱角質環)材質跟人的哪個部位材質一樣？","頭髮","眼睛","指甲",3 ),
         new QuickAnsGameQuestionData("身體哪個部位的紋路和指紋一樣，每個人都不同？","舌頭","耳朵","牙齒",1 ),
-        new QuickAnsGameQuestionData("世界哪一個洲種不出玉米？","北極洲","南極洲","非洲",2 ),
-        new QuickAnsGameQuestionData("本屆世大運在哪個國家舉辦？","台灣","日本","韓國",3 ),
+        new QuickAnsGameQuestionData("世界五大洲哪一個洲種不出玉米？","北極洲","南極洲","非洲",2 ),
+        new QuickAnsGameQuestionData("2015年第28屆世大運在哪個國家舉辦？","台灣","日本","韓國",3 ),
         new QuickAnsGameQuestionData("在網球比賽中，零是用哪個單字來表示？","Love","Like","lose",1 ),
         new QuickAnsGameQuestionData("日本職棒選手楊岱鋼隸屬於日本火腿鬥士隊，請問火腿隊的主場是在日本的哪個城市？","大阪","東京","北海道",3 ),
         new QuickAnsGameQuestionData("2018年世界杯足球賽是由哪個國家主辦？","英國","義大利","俄羅斯",3 ),
@@ -88,6 +87,9 @@ public class GameDefinition
         new QuickAnsGameQuestionData("環境保護中所謂的「三生」不包括下列何者？","生態","生物","生活",2 ),
         new QuickAnsGameQuestionData("iPhone5的充電接頭規格稱為？","USB3.0","Lightning","Mirco USB",2 ),
         new QuickAnsGameQuestionData("下列哪個是台灣「高雄」的名產？","旗魚捲","鐵蛋、阿給","太陽餅",1 ),
+        new QuickAnsGameQuestionData("從1999年起連載15年，於2014年底以總共700話完結的知名漫畫是？","哆啦A夢","獵人","火影忍者",3 ),
+        new QuickAnsGameQuestionData("長期注視3C產品容易因接收過量藍光而傷眼，請問若配戴抗藍光眼鏡看見的畫面會偏向何種顏色？","藍色","綠色","黃色",3 ),
+        new QuickAnsGameQuestionData("台灣最北邊的島嶼為？","東引","北竿","西莒",1 ),
     };
 
     public static List<string> HandSomethingGameQuestionList_isUsed = new List<string>();
@@ -100,8 +102,9 @@ public class GameDefinition
     //按鈕事件
     public enum ButtonEvent
     {
+        Nothing = 0,
         //離開遊戲
-        ExitGame = 1,
+        ExitGame = 1, OpenStartGame = 2,
         //角色選擇場景
         SureButton_RoleSelect = 1000, LeftArrow_RoleSelect = 1001, RightArrow_RoleSelect = 1002, StartGame_RoleSelect = 1003,
 
@@ -132,7 +135,7 @@ public class GameDefinition
 
         //2015腳色
         鳳雛仙人 = 100, 阿當 = 101, 小美 = 102, 阿明 = 103,
-        阿明媽 = 104, 小玉 = 105, 阿偉哥 = 106, 阿哲 = 107, 主持人 = 108, 老師 = 109, 校長 = 110, 同學A = 111, 同學B = 112
+        阿明媽 = 104, 小玉 = 105, 阿偉哥 = 106, 阿哲 = 107, 主持人 = 108, 老師 = 109, 校長 = 110, 同學A = 111, 同學B = 112, 創作家 = 113
     }
 
     /// <summary>
