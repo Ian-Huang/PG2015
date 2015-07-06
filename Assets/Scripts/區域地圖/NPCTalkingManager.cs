@@ -66,14 +66,14 @@ public class NPCTalkingManager : MonoBehaviour
         {
             case GameDefinition.Island.莎吉斯島:
                 MusicChangeScript = this.gameObject.AddComponent<MusicChange>();
-                MusicChangeScript.MusicType = MusicManager.MusicType.莎吉斯島;
+                //MusicChangeScript.MusicType = MusicManager.MusicType.莎吉斯島;
                 MusicChangeScript.isLoop = true;
                 break;
             case GameDefinition.Island.布列德島:
                 if (this.CurrentTalkingData.Mission != GameDefinition.Mission.在我的歌聲裡)   //歌喉戰音樂銜接較為特殊
                 {
                     MusicChangeScript = this.gameObject.AddComponent<MusicChange>();
-                    MusicChangeScript.MusicType = MusicManager.MusicType.布列德島;
+                    //MusicChangeScript.MusicType = MusicManager.MusicType.布列德島;
                     MusicChangeScript.isLoop = true;
                 }
                 break;
@@ -81,7 +81,7 @@ public class NPCTalkingManager : MonoBehaviour
                 if (this.CurrentTalkingData.Mission != GameDefinition.Mission.未填詞)      //歌喉戰音樂銜接較為特殊
                 {
                     MusicChangeScript = this.gameObject.AddComponent<MusicChange>();
-                    MusicChangeScript.MusicType = MusicManager.MusicType.康費爾森島;
+                    //MusicChangeScript.MusicType = MusicManager.MusicType.康費爾森島;
                     MusicChangeScript.isLoop = true;
                 }
                 break;

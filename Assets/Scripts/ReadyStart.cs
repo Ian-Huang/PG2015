@@ -15,7 +15,7 @@ public class ReadyStart : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            Application.LoadLevel("前導");
+            Application.LoadLevel("PG2015");
         }
     }
 }

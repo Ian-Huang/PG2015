@@ -4,7 +4,7 @@ using System.Collections;
 public class MusicChange : MonoBehaviour
 {
     public MusicManager.MusicType MusicType;   //音樂類型
-    public bool isLoop = false;
+    public bool isLoop = true;
 
     // Use this for initialization
     void Start()

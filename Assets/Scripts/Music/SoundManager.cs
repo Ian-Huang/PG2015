@@ -58,6 +58,6 @@ public class SoundManager : MonoBehaviour
 
     public enum SoundType
     {
-        正確音效 = 1, 錯誤音效 = 2, 碰撞音效 = 3
+        正確音效 = 1, 錯誤音效 = 2, 碰撞音效 = 3, 電話鈴聲 = 4
     }
 }
