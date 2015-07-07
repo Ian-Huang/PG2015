@@ -128,6 +128,9 @@ public class TextMeshAppear : MonoBehaviour
                         case EndToDo.TreasureActive:
                             GameDefinition.CurrentTreasureController_Script.CloseTreasure();
                             break;
+                        case EndToDo.ExitGame:
+                            Application.Quit();
+                            break;
                         default:
                             break;
                     }
@@ -141,6 +144,7 @@ public class TextMeshAppear : MonoBehaviour
         Nothing = 0,
         NextEvent = 1,
         NPCTalkNextContent = 2, EnterGame = 3, ExitMission = 4,
-        TreasureActive = 5
+        TreasureActive = 5,
+        ExitGame = 6
     }
 }
