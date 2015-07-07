@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ReadyStart : MonoBehaviour
 {
-
+    private bool isChangeScene = false;
     // Use this for initialization
     void Start()
     {
@@ -15,7 +15,12 @@ public class ReadyStart : MonoBehaviour
     {
         if (Input.anyKeyDown)
         {
-            Application.LoadLevel("PG2015");
+            if (!this.isChangeScene)
+            {
+                this.isChangeScene = true;
+                GameDefinition.QuickJumpStoryIndex = 0;
+                Application.LoadLevelAsync("PG2015");
+            }
         }
     }
 }

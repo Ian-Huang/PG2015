@@ -7,6 +7,9 @@ public class GameDefinition
     public static int GameScreenWidth = -1;
     public static int GameScreenHeight = -1;
 
+    //2015快速跳關使用 紀錄跳關編號
+    public static int QuickJumpStoryIndex = 0;
+
     //人物選擇交換時間
     public const float CardChangeTime = 0.5f;
 
@@ -104,7 +107,7 @@ public class GameDefinition
     {
         Nothing = 0,
         //離開遊戲
-        ExitGame = 1, OpenStartGame = 2,
+        ExitGame = 1, OpenStartGame = 2, BackGame = 3,
         //角色選擇場景
         SureButton_RoleSelect = 1000, LeftArrow_RoleSelect = 1001, RightArrow_RoleSelect = 1002, StartGame_RoleSelect = 1003,
 
@@ -112,7 +115,7 @@ public class GameDefinition
         MissionSure_Area = 2000, MissionCancel_Area = 2001, NextAreaMap = 2002, SureNextArea = 2003, CancelNextArea = 2004,
         NextGameStep = 3000,
         GameEnd = 4000, GameEnd_卡片掉了 = 4001,
-        HandSomethingGame_Correct = 5000, HandSomethingGame_Giveup = 5001, ColorGame_ShowAnswer = 5002, ColorGame_Correct = 5003, ColorGame_Error = 5004, ReasoningGameNextHint = 5005, ReasoningGameShowAnswer = 5006, IdiomsGameShowAnswer = 5007,
+        HandSomethingGame_Correct = 5000, HandSomethingGame_Giveup = 5001, ColorGame_ShowAnswer = 5002, ColorGame_Correct = 5003, ColorGame_Error = 5004, ReasoningGameNextHint = 5005, ReasoningGameShowAnswer = 5006, IdiomsGameShowAnswer = 5007, ReasoningGameSkip = 5008,
         TreasureGame_Finish = 6000
     }
 

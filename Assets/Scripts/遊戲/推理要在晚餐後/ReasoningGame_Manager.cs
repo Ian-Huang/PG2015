@@ -7,6 +7,7 @@ public class ReasoningGame_Manager : MonoBehaviour
 {
     public GameObject NextHintButtonObject;
     public GameObject ShowAnswerButtonObject;
+    public GameObject SkipButtonObject;
 
     public List<QuestionData> CardList;
     private List<QuestionData> currentCardList = new List<QuestionData>();
@@ -51,6 +52,7 @@ public class ReasoningGame_Manager : MonoBehaviour
     {
         this.NextHintButtonObject.SetActive(true);
         this.ShowAnswerButtonObject.SetActive(true);
+        this.SkipButtonObject.SetActive(false);
         this.CurrentCardType = CardType.A;
         this.currentCardList[this.currentQuestionIndex].QuestionObject.SetActive(true);
         this.currentCardList[this.currentQuestionIndex].QuestionObject.GetComponentsInChildren<ReasoningGame_Card>().ToList().Find((ReasoningGame_Card data) =>
@@ -67,6 +69,7 @@ public class ReasoningGame_Manager : MonoBehaviour
             if (this.CurrentCardType == CardType.D)
             {
                 this.NextHintButtonObject.SetActive(false);
+                this.SkipButtonObject.SetActive(true);
             }
 
             this.currentCardList[this.currentQuestionIndex].QuestionObject.GetComponentsInChildren<ReasoningGame_Card>().ToList().Find((ReasoningGame_Card data) =>
@@ -76,23 +79,27 @@ public class ReasoningGame_Manager : MonoBehaviour
         }
     }
 
-    public void ShowAnswer()
+    public void ShowAnswer(bool isSkip)
     {
-        //計分
-        switch (this.CurrentCardType)
+        //略過不計分
+        if (!isSkip)
         {
-            case CardType.A:
-                GameCollection.script.ReasoningGame_OneHintAnswerCount++;
-                break;
-            case CardType.B:
-                GameCollection.script.ReasoningGame_TwoHintAnswerCount++;
-                break;
-            case CardType.C:
-                GameCollection.script.ReasoningGame_ThreeHintAnswerCount++;
-                break;
-            case CardType.D:
-                GameCollection.script.ReasoningGame_FourHintAnswerCount++;
-                break;
+            //計分
+            switch (this.CurrentCardType)
+            {
+                case CardType.A:
+                    GameCollection.script.ReasoningGame_OneHintAnswerCount++;
+                    break;
+                case CardType.B:
+                    GameCollection.script.ReasoningGame_TwoHintAnswerCount++;
+                    break;
+                case CardType.C:
+                    GameCollection.script.ReasoningGame_ThreeHintAnswerCount++;
+                    break;
+                case CardType.D:
+                    GameCollection.script.ReasoningGame_FourHintAnswerCount++;
+                    break;
+            }
         }
 
         //秀解答
@@ -102,6 +109,7 @@ public class ReasoningGame_Manager : MonoBehaviour
 
         this.NextHintButtonObject.SetActive(false);
         this.ShowAnswerButtonObject.SetActive(false);
+        this.SkipButtonObject.SetActive(false);
 
         Invoke("NextQuestion", 2);
     }

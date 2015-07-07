@@ -74,7 +74,10 @@ public class ButtonController : MonoBehaviour
                 ReasoningGame_Manager.script.ShowNextHint();
                 break;
             case GameDefinition.ButtonEvent.ReasoningGameShowAnswer:    //推理在晚餐後，顯示答案
-                ReasoningGame_Manager.script.ShowAnswer();
+                ReasoningGame_Manager.script.ShowAnswer(false);
+                break;
+            case GameDefinition.ButtonEvent.ReasoningGameSkip:    //推理在晚餐後，略過此題
+                ReasoningGame_Manager.script.ShowAnswer(true);
                 break;
             case GameDefinition.ButtonEvent.IdiomsGameShowAnswer:    //看圖猜成語，顯示答案
                 IdiomsGame_Manager.script.ShowAnswer();
@@ -98,6 +101,9 @@ public class ButtonController : MonoBehaviour
             case GameDefinition.ButtonEvent.OpenStartGame:    //下一事件
                 this.buttonEvent = GameDefinition.ButtonEvent.Nothing;
                 StartCoroutine(this.OpenStarGameEvent());
+                break;
+            case GameDefinition.ButtonEvent.BackGame:    //快速跳關介面的返回按鈕
+                QuickJumpGame.script.SetUIVisible(false);
                 break;
             default:
                 break;
